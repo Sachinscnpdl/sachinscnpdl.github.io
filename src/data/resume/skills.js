@@ -1,123 +1,43 @@
 const skills = [
   {
-    title: 'Javascript',
-    competency: 4,
-    category: ['Web Development', 'Languages', 'Javascript'],
-  },
-  {
-    title: 'Node.JS',
+    title: 'Python',
     competency: 5,
-    category: ['Web Development', 'Javascript'],
+    category: ['Languages', 'Python', 'ML Engineering', 'Computational Materials Science'],
   },
   {
-    title: 'React',
-    competency: 2,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'Next.JS',
-    competency: 3,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'Bash',
-    competency: 2,
-    category: ['Tools', 'Languages'],
-  },
-  {
-    title: 'Amazon Web Services',
+    title: 'Finite Element Analysis (FEA)',
     competency: 4,
-    category: ['Web Development', 'Tools'],
+    category: ['Computational Materials Science', 'Engineering'],
   },
   {
-    title: 'Heroku',
-    competency: 2,
-    category: ['Web Development', 'Tools'],
-  },
-  {
-    title: 'MongoDB',
-    competency: 3,
-    category: ['Web Development', 'Databases'],
-  },
-  {
-    title: 'ElasticSearch',
-    competency: 2,
-    category: ['Web Development', 'Databases'],
-  },
-  {
-    title: 'PostgreSQL/SQLite3/SQL/Redshift',
+    title: 'Phase Field Modeling',
     competency: 4,
-    category: ['Web Development', 'Databases', 'Languages'],
+    category: ['Computational Materials Science', 'Simulation'],
   },
   {
-    title: 'Redis',
+    title: 'Material Informatics',
+    competency: 4,
+    category: ['Computational Materials Science', 'Data Science'],
+  },
+  {
+    title: 'Density Functional Theory (DFT)',
     competency: 3,
-    category: ['Web Development', 'Databases'],
+    category: ['Computational Materials Science', 'Simulation', 'Physics'],
+  },
+  {
+    title: 'Machine Learning in Materials Science',
+    competency: 3,
+    category: ['ML Engineering', 'Computational Materials Science'],
   },
   {
     title: 'Data Mining',
     competency: 3,
-    category: ['ML Engineering'],
+    category: ['ML Engineering', 'Data Science'],
   },
   {
-    title: 'Express.JS',
-    competency: 2,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'D3',
-    competency: 2,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'Flask',
-    competency: 3,
-    category: ['Web Development', 'Python'],
-  },
-  {
-    title: 'FastAPI',
-    competency: 3,
-    category: ['Web Development', 'Python'],
-  },
-  {
-    title: 'Git/Mercurial',
-    competency: 3,
-    category: ['Tools'],
-  },
-  {
-    title: 'Kubernetes',
-    competency: 2,
-    category: ['Tools', 'Data Engineering'],
-  },
-  {
-    title: 'Google Cloud Compute',
-    competency: 2,
-    category: ['Tools', 'Web Development'],
-  },
-  {
-    title: 'AWS',
-    competency: 3,
-    category: ['Tools', 'Web Development'],
-  },
-  {
-    title: 'Docker',
-    competency: 3,
-    category: ['Tools', 'Data Engineering'],
-  },
-  {
-    title: 'AWS Lambda',
-    competency: 3,
-    category: ['Tools', 'Web Development'],
-  },
-  {
-    title: 'Numpy',
-    competency: 3,
-    category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Numba',
-    competency: 2,
-    category: ['Data Science', 'Data Engineering', 'Python'],
+    title: 'Scikit-Learn',
+    competency: 4,
+    category: ['ML Engineering', 'Python', 'Data Science'],
   },
   {
     title: 'Tensorflow + Keras',
@@ -130,64 +50,9 @@ const skills = [
     category: ['ML Engineering', 'Python'],
   },
   {
-    title: 'Jupyter',
+    title: 'NumPy',
     competency: 3,
-    category: ['Data Science', 'Python'],
-  },
-  {
-    title: 'Typescript',
-    competency: 3,
-    category: ['Web Development', 'Languages', 'Javascript'],
-  },
-  {
-    title: 'HTML + SASS/SCSS/CSS',
-    competency: 3,
-    category: ['Web Development', 'Languages'],
-  },
-  {
-    title: 'Python',
-    competency: 5,
-    category: ['Languages', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Ruby',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'Ruby on Rails',
-    competency: 3,
-    category: ['Web Development', 'Languages'],
-  },
-  {
-    title: 'C++',
-    competency: 1,
-    category: ['Languages'],
-  },
-  {
-    title: 'Julia',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'MATLAB',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'R',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'Data Visualization',
-    competency: 3,
-    category: ['Data Science', 'Javascript'],
-  },
-  {
-    title: 'GraphQL',
-    competency: 2,
-    category: ['Web Development', 'Databases'],
+    category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
   },
   {
     title: 'Pandas',
@@ -200,46 +65,60 @@ const skills = [
     category: ['Data Engineering', 'ML Engineering', 'Python'],
   },
   {
-    title: 'Scikit-Learn',
-    competency: 4,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
-  },
-  {
-    title: 'Spark',
-    competency: 2,
-    category: ['Data Engineering', 'ML Engineering'],
-  },
-  {
-    title: 'Dagster',
-    competency: 2,
-    category: ['Data Engineering', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Mypy',
+    title: 'Jupyter',
     competency: 3,
-    category: ['Python'],
+    category: ['Data Science', 'Python'],
   },
   {
-    title: 'Pylint',
+    title: 'SciPy',
+    competency: 3,
+    category: ['Data Science', 'Python', 'Computational Materials Science'],
+  },
+  {
+    title: 'Matlab',
+    competency: 3,
+    category: ['Languages', 'Simulation'],
+  },
+  {
+    title: 'Solid Mechanics',
+    competency: 3,
+    category: ['Computational Materials Science', 'Engineering'],
+  },
+  {
+    title: 'Computational Thermodynamics',
+    competency: 3,
+    category: ['Computational Materials Science', 'Physics'],
+  },
+  {
+    title: 'Material Modeling',
     competency: 4,
-    category: ['Data Engineering', 'Python'],
+    category: ['Computational Materials Science', 'Simulation'],
+  },
+  {
+    title: 'Data Visualization',
+    competency: 4,
+    category: ['Data Science', 'Python', 'Visualization'],
+  },
+  {
+    title: 'Graph Theory',
+    competency: 3,
+    category: ['Data Science', 'Computational Materials Science'],
   },
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
 
-// this is a list of colors that I like. The length should be === to the
-// number of categories. Re-arrange this list until you find a pattern you like.
+// Color selection for categories
 const colors = [
-  '#6968b3',
-  '#37b1f5',
-  '#40494e',
-  '#515dd4',
-  '#e47272',
-  '#cc7b94',
-  '#3896e2',
-  '#c3423f',
-  '#d75858',
-  '#747fff',
-  '#64cb7b',
+  '#6968b3', // Computational Materials Science
+  '#37b1f5', // ML Engineering
+  '#40494e', // Data Science
+  '#515dd4', // Python
+  '#e47272', // Simulation
+  '#cc7b94', // Engineering
+  '#3896e2', // Physics
+  '#c3423f', // Visualization
+  '#d75858', // Data Engineering
+  '#747fff', // Material Informatics
+  '#64cb7b', // Simulation
 ];
 
 const categories = [...new Set(skills.flatMap(({ category }) => category))]

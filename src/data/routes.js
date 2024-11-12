@@ -1,7 +1,7 @@
 const routes = [
   {
     index: true,
-    label: "Michael D'Angelo",
+    label: "Sachin Poudel",
     path: '/',
   },
   {
@@ -13,9 +13,16 @@ const routes = [
     path: '/resume',
   },
   {
-    label: 'Projects',
+    label: 'Research Highlights',
     path: '/projects',
   },
+  
+  
+    {
+    label: 'Publications',
+    path: '/publications',
+  },
+  
   {
     label: 'Stats',
     path: '/stats',
