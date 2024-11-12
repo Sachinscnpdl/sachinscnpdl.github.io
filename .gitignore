@@ -1,0 +1,4 @@
+# Ignore node_modules and puppeteer large files
+node_modules/
+**/puppeteer/.local-chromium/
+
