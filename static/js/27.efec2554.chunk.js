@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunksachinscnpdl_github_io=self.webpackChunksachinscnpdl_github_io||[]).push([[27],{27:(s,a,c)=>{s.exports=c.p+"static/media/about.f1a32886427d58cf1ab1.md"}}]);
