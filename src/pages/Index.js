@@ -14,11 +14,10 @@ const Index = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="/">About this site</Link>
+            <Link to="/">Sachin Popudel's personal website</Link>
           </h2>
           <p>
-            Sachin Popudel's personal website. 
-            Passionate PhD Candidate in Mechanical Engineering
+            PhD Candidate in Mechanical Engineering
           </p>
         </div>
       </header>
