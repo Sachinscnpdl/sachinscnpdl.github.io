@@ -1,4 +1,4 @@
-import React from 'react';
+come to import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Main from '../layouts/Main';
@@ -14,11 +14,10 @@ const Index = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="/">About this site</Link>
+            <Link to="/">Welcome to Sachin Poudel's Personal Website</Link>
           </h2>
           <p>
-            Sachin Popudel's personal website. 
-            Passionate PhD Candidate in Mechanical Engineering
+            PhD Candidate in Mechanical Engineering
           </p>
         </div>
       </header>
