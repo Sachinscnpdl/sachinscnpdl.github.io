@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version-file: '.nvmrc'
+        node-version: '16'  # Or whatever version you want to use
     - name: Install
       run: npm ci
     - name: Build and Deploy
