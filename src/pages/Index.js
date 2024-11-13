@@ -6,7 +6,7 @@ import Main from '../layouts/Main';
 const Index = () => (
   <Main
     description={
-      "Sachin Popudel's personal website. Passionate PhD Candidate in Mechanical Engineering | 🧬 Computational Material Scientist 🖥️, "
+      "Sachin Popudel's personal website. PhD Candidate in Mechanical Engineering "
    
     }
   >
@@ -17,7 +17,8 @@ const Index = () => (
             <Link to="/">About this site</Link>
           </h2>
           <p>
-            Sachin Popudel's personal website. Passionate PhD Candidate in Mechanical Engineering | 🧬 Computational Material Scientist 🖥️
+            Sachin Popudel's personal website. 
+            Passionate PhD Candidate in Mechanical Engineering
           </p>
         </div>
       </header>
