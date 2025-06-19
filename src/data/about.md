@@ -1,5 +1,5 @@
 # About Me:
-As a dedicated PhD candidate in Mechanical Engineering, I'm driven by a relentless curiosity to explore the intricate world of materials through the lens of computational science. My research focuses on the field of mesoscale simulations for powdered materials, multicomponent alloys, advanced machine learning, functional materials, Phase field modeling, digital models as design tools for metamorphic manufacturing, density functional theory, and more.
+A dedicated PhD candidate in Mechanical Engineering, I'm driven by a relentless curiosity to explore the intricate world of materials through the lens of computational science. My research focuses on the field of mesoscale simulations for powdered materials, multicomponent alloys, advanced machine learning, functional materials, Phase field modeling, digital models as design tools for metamorphic manufacturing, density functional theory, and more.
 
  # Expertise:
 🔬 Energy materials microstructure evolution
