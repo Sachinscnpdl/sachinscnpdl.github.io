@@ -4,16 +4,14 @@ const routes = [
     label: "Sachin Poudel",
     path: '/',
   },
+  // {
+  //   label: 'About',
+  //   path: '/about',
+  // },
+  
+
   {
-    label: 'About',
-    path: '/about',
-  },
-  {
-    label: 'Resume',
-    path: '/resume',
-  },
-  {
-    label: 'Research Highlights',
+    label: 'Research ',
     path: '/projects',
   },
   
@@ -22,7 +20,19 @@ const routes = [
     label: 'Publications',
     path: '/publications',
   },
+
+
+      {
+    label: 'Presentations',
+    path: '/presentations',
+  },
   
+  {
+    label: 'Resume',
+    path: '/resume',
+  },
+
+
   {
     label: 'Stats',
     path: '/stats',

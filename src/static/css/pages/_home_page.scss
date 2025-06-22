@@ -1,0 +1,257 @@
+$primary-color: #007bff;
+$dark-bg: #67530d;
+$edu-bg: #d5e9f0;
+$exp-bg: #e1e8d3;
+$white: #ffffff;
+$black: #0b0000;
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 15vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $white;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.research-button-container {
+  text-align: center;
+  padding: 1rem 0;
+
+  .button.primary.hero-button {
+    background-color: $primary-color;
+    color: $white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+.overview {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text {
+    p {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.collaboration-section {
+  padding: 2rem;
+  text-align: center;
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+
+    .form-group {
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: $primary-color;
+          outline: none;
+        }
+      }
+
+      textarea {
+        min-height: 100px;
+      }
+    }
+
+    .button.primary {
+      background-color: $primary-color;
+      color: $white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+.cta-buttons {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  .button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .button.primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  .button.cta-button {
+    background-color: #6c757d;
+    color: $white;
+
+    &:hover {
+      background-color: darken(#6c757d, 10%);
+    }
+  }
+}
+
+.footer {
+  padding: 1rem;
+  background-color: $dark-bg;
+  color: $white;
+  font-size: 1.3rem;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.8rem;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+
+    a {
+      color: $white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 20vh;
+
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .research-button-container {
+    padding: 0.8rem 0;
+
+    .button.primary.hero-button {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 25vh;
+
+    .hero-content {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .research-button-container {
+    padding: 0.5rem 0;
+  }
+}

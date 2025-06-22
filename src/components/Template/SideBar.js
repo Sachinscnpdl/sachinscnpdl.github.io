@@ -9,10 +9,12 @@ const SideBar = () => (
   <section id="sidebar">
     <section id="intro">
       <Link to="/" className="logo">
-        <img src={`${PUBLIC_URL}/images/me.jpg`} alt="" />
+        <img src={`${PUBLIC_URL}/images/me.jpg`} alt="Sachin Poudel" />
       </Link>
       <header>
-        <h2>Sachin Poudel</h2>
+        <h2>Hi, I’m Sachin Poudel</h2>
+        <p>PhD Candidate in Mechanical Engineering</p>
+        <p>Silesian University of Technology</p>
         <p>
           <a href="mailto:sachinscnpdl@gmail.com">sachinscnpdl@gmail.com</a>
         </p>
@@ -20,24 +22,21 @@ const SideBar = () => (
     </section>
 
     <section className="blurb">
-      <h2>About</h2>
+      <h2>About Me</h2>
       <p>
-	Hi, I&apos;m Sachin Poudel. I am a{' '}
-	<a href="https://www.polsl.pl/">doctoral student at Silesian University of Technology</a>,
-	specializing in Material Informatics, Functional Materials, DFT, Phase Field, and 		Microstructures.
-
+        I specialize in <strong>Material Informatics</strong>, <strong>Phase-field Modeling</strong>,
+        and <strong>Multi-physics, Multi-scale Functional Materials</strong>.
+      </p>
+      <p>
+        As a computational research engineer, I focus on understanding, modeling,
+        and optimizing the mechanical response of materials through advanced simulations
+        and data-driven methods.
       </p>
       <ul className="actions">
         <li>
-          {!window.location.pathname.includes('/resume') ? (
-            <Link to="/resume" className="button">
-              Learn More
-            </Link>
-          ) : (
-            <Link to="/about" className="button">
-              About Me
-            </Link>
-          )}
+          <Link to="/about" className="button">
+            Learn More
+          </Link>
         </li>
       </ul>
     </section>
@@ -45,7 +44,7 @@ const SideBar = () => (
     <section id="footer">
       <ContactIcons />
       <p className="copyright">
-        &copy; Michael D&apos;Angelo <Link to="/">mldangelo.com</Link>.
+        &copy; Sachin Poudel <Link to="/">sachinscnpdl.github.io</Link>.
       </p>
     </section>
   </section>

@@ -1,131 +1,145 @@
 const skills = [
-  {
-    title: 'Python',
-    competency: 5,
-    category: ['Languages', 'Python', 'ML Engineering', 'Computational Materials Science'],
-  },
+  // Simulation and Computational Physics
   {
     title: 'Finite Element Analysis (FEA)',
     competency: 4,
-    category: ['Computational Materials Science', 'Engineering'],
+    category: ['Simulation ', 'Engineering Applications']
   },
   {
     title: 'Phase Field Modeling',
     competency: 4,
-    category: ['Computational Materials Science', 'Simulation'],
+    category: ['Simulation ', 'Materials Science']
   },
   {
-    title: 'Material Informatics',
-    competency: 4,
-    category: ['Computational Materials Science', 'Data Science'],
-  },
-  {
-    title: 'Density Functional Theory (DFT)',
+    title: 'DFT',
     competency: 3,
-    category: ['Computational Materials Science', 'Simulation', 'Physics'],
-  },
-  {
-    title: 'Machine Learning in Materials Science',
-    competency: 3,
-    category: ['ML Engineering', 'Computational Materials Science'],
-  },
-  {
-    title: 'Data Mining',
-    competency: 3,
-    category: ['ML Engineering', 'Data Science'],
-  },
-  {
-    title: 'Scikit-Learn',
-    competency: 4,
-    category: ['ML Engineering', 'Python', 'Data Science'],
-  },
-  {
-    title: 'Tensorflow + Keras',
-    competency: 3,
-    category: ['ML Engineering', 'Python'],
-  },
-  {
-    title: 'PyTorch',
-    competency: 3,
-    category: ['ML Engineering', 'Python'],
-  },
-  {
-    title: 'NumPy',
-    competency: 3,
-    category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Pandas',
-    competency: 5,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
-  },
-  {
-    title: 'Matplotlib',
-    competency: 3,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
-  },
-  {
-    title: 'Jupyter',
-    competency: 3,
-    category: ['Data Science', 'Python'],
-  },
-  {
-    title: 'SciPy',
-    competency: 3,
-    category: ['Data Science', 'Python', 'Computational Materials Science'],
-  },
-  {
-    title: 'Matlab',
-    competency: 3,
-    category: ['Languages', 'Simulation'],
+    category: ['Simulation ', 'Materials Science']
   },
   {
     title: 'Solid Mechanics',
     competency: 3,
-    category: ['Computational Materials Science', 'Engineering'],
+    category: ['Simulation ', 'Engineering Applications']
   },
   {
     title: 'Computational Thermodynamics',
     competency: 3,
-    category: ['Computational Materials Science', 'Physics'],
+    category: ['Simulation ', 'Materials Science']
   },
   {
-    title: 'Material Modeling',
+    title: 'Microstructure Modeling',
     competency: 4,
-    category: ['Computational Materials Science', 'Simulation'],
+    category: ['Simulation ', 'Materials Science']
   },
+
+
+  // Machine Learning and Data Science
+  {
+    title: 'Machine Learning (ML)',
+    competency: 5,
+    category: ['ML & Data Science', 'Programming ']
+  },
+  {
+    title: 'Data Analysis',
+    competency: 3,
+    category: ['ML & Data Science']
+  },
+
   {
     title: 'Data Visualization',
     competency: 4,
-    category: ['Data Science', 'Python', 'Visualization'],
+    category: ['ML & Data Science']
   },
   {
     title: 'Graph Theory',
     competency: 3,
-    category: ['Data Science', 'Computational Materials Science'],
+    category: ['ML & Data Science']
   },
+  {
+    title: 'Statistical Modeling',
+    competency: 3,
+    category: ['ML & Data Science']
+  },
+
+  // Programming 
+  {
+    title: 'Python Programming',
+    competency: 5,
+    category: ['Programming ', 'ML & Data Science', 'Simulation ', 'Materials Informatics']
+  },
+  {
+    title: 'MATLAB Scripting',
+    competency: 3,
+    category: ['Programming ', 'Simulation ']
+  },
+  {
+    title: 'C++ Development',
+    competency: 4,
+    category: ['Programming ', 'Simulation ', 'Engineering Applications']
+  },
+  {
+    title: 'Fortran 90',
+    competency: 3,
+    category: ['Programming ', 'Simulation ']
+  },
+  {
+    title: 'HPC',
+    competency: 3,
+    category: ['Programming ', 'Simulation ']
+  },
+
+  // Materials Science
+  {
+    title: 'Crystallography',
+    competency: 3,
+    category: ['Materials Science', 'Simulation ']
+  },
+  {
+    title: 'Characterization',
+    competency: 3,
+    category: ['Materials Science']
+  },
+
+  // Materials Informatics
+  {
+    title: 'Informatics & AI',
+    competency: 4,
+    category: ['Materials Informatics', 'ML & Data Science', 'Materials Science']
+  },
+  {
+    title: 'Material Featurization',
+    competency: 3,
+    category: ['Materials Informatics', 'Programming ']
+  },
+
+  // Engineering Applications
+  {
+    title: 'Design & Optimization',
+    competency: 3,
+    category: ['Engineering Applications', 'Simulation ']
+  },
+  {
+    title: 'Stress Analysis',
+    competency: 3,
+    category: ['Engineering Applications', 'Simulation ']
+  }
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
 
-// Color selection for categories
 const colors = [
-  '#6968b3', // Computational Materials Science
-  '#37b1f5', // ML Engineering
-  '#40494e', // Data Science
-  '#515dd4', // Python
-  '#e47272', // Simulation
-  '#cc7b94', // Engineering
-  '#3896e2', // Physics
-  '#c3423f', // Visualization
-  '#d75858', // Data Engineering
-  '#747fff', // Material Informatics
-  '#64cb7b', // Simulation
+  '#6968b3', // Simulation al
+  '#37b1f5', // Machine Learning and Data Science
+  '#40494e', // Programming 
+  '#e47272', // Materials Science
+  '#cc7b94', // Engineering Applications
+  '#8a2be2'  // Materials Informatics (new color for the new category)
 ];
 
-const categories = [...new Set(skills.flatMap(({ category }) => category))]
-  .sort()
-  .map((category, index) => ({
-    name: category,
-    color: colors[index],
-  }));
+const categories = [
+  { name: 'Simulation ', color: '#6968b3' },
+  { name: 'ML & Data Science', color: '#37b1f5' },
+  { name: 'Programming ', color: '#40494e' },
+  { name: 'Materials Science', color: '#e47272' },
+  { name: 'Engineering Applications', color: '#cc7b94' },
+  { name: 'Materials Informatics', color: '#8a2be2' } // New category
+];
 
 export { categories, skills };

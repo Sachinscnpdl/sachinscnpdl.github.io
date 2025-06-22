@@ -14,6 +14,7 @@ const Index = lazy(() => import('./pages/Index'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Publications = lazy(() => import('./pages/Publications'));
+const Presentations = lazy(() => import('./pages/Presentations')); // <--- CHANGE THIS LINE
 const Resume = lazy(() => import('./pages/Resume'));
 const Stats = lazy(() => import('./pages/Stats'));
 
@@ -27,6 +28,7 @@ const App = () => (
         <Route path="/stats" element={<Stats />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/publications" element={<Publications />} />
+        <Route path="/presentations" element={<Presentations />} /> {/* This route is correct */}
         <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

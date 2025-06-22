@@ -13,7 +13,7 @@ $duration: (
 $size: (
   element-height: 2.75em,
   element-margin: 2em,
-  section-spacing: 3em,
+  section-spacing: 1.5em,
   section-spacing-small: 1.5em,
   menu: 25em,
 );
@@ -34,20 +34,20 @@ $font: (
     Helvetica,
     sans-serif,
   ),
-  weight: 400,
+  weight: 500,
   weight-bold: 700,
-  weight-heading: 400,
+  weight-heading: 500,
   weight-heading-bold: 800,
   weight-heading-extrabold: 900,
-  kerning-heading: 0.25em,
+  kerning-heading: 0.1em,
 );
 
 // Palette.
 $palette: (
   bg: #ffffff,
   bg-alt: #f4f4f4,
-  fg: #646464,
-  fg-bold: #3c3b3b,
+  fg: #000000,
+  fg-bold: #543308,
   fg-light: #aaaaaa,
   border: rgba(160, 160, 160, 0.3),
   border-bg: rgba(160, 160, 160, 0.075),

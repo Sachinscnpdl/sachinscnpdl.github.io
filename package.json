@@ -14,9 +14,38 @@
     "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js",
     "build": "rimraf ./build && react-scripts build",
     "lint": "eslint \"**/*.js\"",
-    "predeploy": "npm run build && react-snap",
+    "predeploy": "npm run build && cp build/index.html build/404.html",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "test": "npx jest"
+    "test": "npx jest",
+    "postinstall": "patch-package"
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/about",
+      "/projects",
+      "/publications",
+      "/presentations",
+      "/resume",
+      "/contact",
+      "/stats"
+    ],
+    "skipThirdPartyRequests": true,
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
+  "overrides": {
+    "nth-check": "2.0.1",
+    "node-fetch": "2.6.7",
+    "html-minifier": "4.0.0",
+    "qs": "6.11.0",
+    "path-to-regexp": "6.2.1",
+    "body-parser": "1.20.3",
+    "cookie": "0.7.0",
+    "send": "0.19.0",
+    "serve-static": "1.16.2",
+    "minimist": "1.2.7",
+    "mkdirp": "1.0.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -39,6 +68,7 @@
     "@babel/eslint-parser": "^7.25.9",
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.25.9",
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
@@ -48,6 +78,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "^7.37.2",
+    "patch-package": "^8.0.0",
     "react-snap": "^1.23.0",
     "rimraf": "^6.0.1",
     "sass": "^1.80.6",

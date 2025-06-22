@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import CategoryButton from './Skills/CategoryButton';
@@ -10,9 +10,13 @@ const Skills = ({ skills, categories }) => {
   );
 
   const [buttons, setButtons] = useState(initialButtons);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const handleChildClick = (label) => {
-    // Toggle button that was clicked. Turn all other buttons off.
     const newButtons = Object.keys(buttons).reduce(
       (obj, key) => ({
         ...obj,
@@ -20,13 +24,11 @@ const Skills = ({ skills, categories }) => {
       }),
       {},
     );
-    // Turn on 'All' button if other buttons are off
     newButtons.All = !Object.keys(buttons).some((key) => newButtons[key]);
     setButtons(newButtons);
   };
 
   const getRows = () => {
-    // search for true active categories
     const actCat = Object.keys(buttons).reduce(
       (cat, key) => (buttons[key] ? key : cat),
       'All',
@@ -43,12 +45,16 @@ const Skills = ({ skills, categories }) => {
       return ret;
     };
 
-    return skills
+    const filteredSkills = skills
       .sort(comparator)
-      .filter((skill) => actCat === 'All' || skill.category.includes(actCat))
-      .map((skill) => (
-        <SkillBar categories={categories} data={skill} key={skill.title} />
-      ));
+      .filter((skill) => actCat === 'All' || skill.category.includes(actCat));
+
+    const third = Math.ceil(filteredSkills.length / 3);
+    return [
+      filteredSkills.slice(0, third),
+      filteredSkills.slice(third, third * 2),
+      filteredSkills.slice(third * 2),
+    ];
   };
 
   const getButtons = () => Object.keys(buttons).map((key) => (
@@ -63,15 +69,38 @@ const Skills = ({ skills, categories }) => {
   return (
     <div className="skills">
       <div className="link-to" id="skills" />
-      <div className="title">
-        <h3>Skills</h3>
-        <p>
-          Note: I think these sections are silly, but everyone seems to have
-          one. Here is a *mostly* honest overview of my skills.
+      <div className="title" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 1s ease-in' }}>
+        <h3 style={{ color: '#007bff', textAlign: 'center', fontSize: '2.2rem', marginBottom: '0.5rem' }}>My Expertise Unleashed</h3>
+        <p style={{ color: '#666', fontStyle: 'italic', textAlign: 'center', fontSize: '1.1rem' }}>
+          *A playful take on my skills—real mastery happens in the lab and code! Explore my strengths below.
         </p>
       </div>
-      <div className="skill-button-container">{getButtons()}</div>
-      <div className="skill-row-container">{getRows()}</div>
+      <div className="skill-button-container" style={{ textAlign: 'center', margin: '1.5rem 0' }}>
+        {getButtons()}
+      </div>
+      <div className="skill-row-container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
+        <div>
+          {getRows()[0].map((skill) => (
+            <div key={skill.title} className="skill-card">
+              <SkillBar categories={categories} data={skill} />
+            </div>
+          ))}
+        </div>
+        <div>
+          {getRows()[1].map((skill) => (
+            <div key={skill.title} className="skill-card">
+              <SkillBar categories={categories} data={skill} />
+            </div>
+          ))}
+        </div>
+        <div>
+          {getRows()[2].map((skill) => (
+            <div key={skill.title} className="skill-card">
+              <SkillBar categories={categories} data={skill} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
