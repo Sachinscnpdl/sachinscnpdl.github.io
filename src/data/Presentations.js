@@ -15,7 +15,7 @@ const data = [
     type: 'Oral Presentation',
     description: 'This presentation examines how externally applied stress affects dendrite growth in solid-state Lithium-ion batteries through a computational model. Using the phase-field model to simulate electrochemical migration, the study provides insights into dendrite formation and propagation. These findings are essential for improving battery safety and performance by mitigating dendrite-related issues.',
     authors: 'Sachin Poudel*, Anna Timofiejczuk, Nele Moelans, Anil Kunwar',
-    link: '/presentations/pf24_may20_slides.pdf'
+    link: '/presentations/PF24_Sachin_slides.pdf'
   },
   {
     title: 'Phase field evolution in Ni-YSZ Fuel Cells with Temperature-Dependent Elasticity',

@@ -230,8 +230,8 @@ $black: #0b0000;
 
 .degree-text,
 .job-title {
-  font-size: 1.5rem;
-  color: $black;
+  font-size: 1.25rem;
+  color: red;
   margin: 0;
   font-weight: 600;
   display: flex;
@@ -334,7 +334,7 @@ $black: #0b0000;
 
 .school,
 .link {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: $black;
   text-decoration: none;
   transition: color 0.3s ease;

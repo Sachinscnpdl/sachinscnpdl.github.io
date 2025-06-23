@@ -11,10 +11,9 @@ const Age = () => {
 
   useEffect(() => {
     const timer = setInterval(() => tick(), 25);
-    return () => {
-      clearInterval(timer);
-    };
+    return () => clearInterval(timer);
   }, []);
+
   return <>{age}</>;
 };
 
@@ -23,17 +22,19 @@ const data = [
     key: 'age',
     label: 'Current age',
     value: <Age />,
+    icon: 'birthday-cake',
   },
   {
     key: 'countries',
     label: 'Countries visited',
-    value: 5,
-
+    value: 7,
+    icon: 'globe',
   },
   {
     key: 'location',
     label: 'Current city',
     value: 'Gliwice, Poland',
+    icon: 'map-marker-alt',
   },
 ];
 

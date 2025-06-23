@@ -2,11 +2,9 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
-import { faAngellist } from '@fortawesome/free-brands-svg-icons/faAngellist';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import { faResearchgate } from '@fortawesome/free-brands-svg-icons/faResearchgate';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
-// See https://fontawesome.com/icons?d=gallery&s=brands,regular&m=free
-// to add other icons.
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap';
 
 const data = [
   {
@@ -15,32 +13,32 @@ const data = [
     icon: faGithub,
   },
   {
-    link: 'https://facebook.com/d',
+    link: 'https://www.facebook.com/profile.php?id=100001284192090',
     label: 'Facebook',
     icon: faFacebookF,
   },
   {
-    link: 'https://www.instagram.com/dangelosaurus/',
+    link: 'https://www.instagram.com/sachinscnpdl/',
     label: 'Instagram',
     icon: faInstagram,
   },
   {
-    link: 'https://www.linkedin.com/in/michaelldangelo',
+    link: 'https://www.linkedin.com/in/sachinscnpdl/',
     label: 'LinkedIn',
     icon: faLinkedinIn,
   },
   {
-    link: 'https://angel.co/michael-d-angelo',
-    label: 'Angel List',
-    icon: faAngellist,
+    link: 'https://scholar.google.com/citations?user=AY4OacUAAAAJ&hl=en',
+    label: 'Google Scholar',
+    icon: faGraduationCap,
   },
   {
-    link: 'https://twitter.com/dangelosaurus',
-    label: 'Twitter',
-    icon: faTwitter,
+    link: 'https://www.researchgate.net/profile/YSachin-Poudel?ev=hdr_xprf',
+    label: 'ResearchGate',
+    icon: faResearchgate,
   },
   {
-    link: 'sachinscnpdl@gmail.com',
+    link: 'mailto:sachinscnpdl@gmail.com',
     label: 'Email',
     icon: faEnvelope,
   },

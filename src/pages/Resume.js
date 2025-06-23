@@ -34,12 +34,25 @@ const Resume = () => (
           <h2>
             <Link to="resume">Resume</Link>
           </h2>
-          <div className="link-container">
-            {Object.keys(sections).map((sec) => (
-              <h4 key={sec}>
-                <a href={`#${sec.toLowerCase()}`}>{sec}</a>
-              </h4>
-            ))}
+          <div className="header-actions">
+            <div className="link-container">
+              {Object.keys(sections).map((sec) => (
+                <h4 key={sec}>
+                  <a href={`#${sec.toLowerCase()}`}>{sec}</a>
+                </h4>
+              ))}
+            </div>
+            <div className="pdf-container">
+              <a
+                href="/SachinCV.pdf"
+                className="button primary"
+                download="SachinCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume PDF
+              </a>
+            </div>
           </div>
         </div>
       </header>

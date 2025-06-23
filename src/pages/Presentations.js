@@ -5,14 +5,14 @@ import Cell from '../components/Presentations/Cell';
 import data from '../data/Presentations';
 
 const Presentations = () => (
-  <Main title="Research Highlights" description="Learn about Sachin Poudel's presentations.">
+  <Main title="Presentations" description="Learn about Sachin Poudel's presentations.">
     <article className="post" id="presentations">
       <header>
         <div className="title">
           <h2>
             <Link to="/presentations">Presentations</Link>
           </h2>
-          <p>Research area and key findings from my interdisciplinary research presentations. For full details, follow the links to the corresponding publications.</p>
+          <p>Oral and poster presentations showcase research and innovative ideas at leading conferences worldwide. For full details, go through each presentations.</p>
         </div>
       </header>
       {data.map((presentation) => (

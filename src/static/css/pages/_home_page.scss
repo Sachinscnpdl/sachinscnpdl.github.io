@@ -1,42 +1,46 @@
-$primary-color: #007bff;
-$dark-bg: #67530d;
+// _home_page.scss
+$primary-color: #6ac70d;
+$dark-bg: #1b1502;
 $edu-bg: #d5e9f0;
 $exp-bg: #e1e8d3;
-$white: #ffffff;
-$black: #0b0000;
+$white: #000005;
+$black: #110101;
 
 .hero {
   background-size: cover;
   background-position: center;
-  height: 15vh;
+  background-attachment: fixed; // Parallax effect
+  min-height: 15vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: $white;
+  color: rgb(105, 15, 195);
 
   .hero-overlay {
     position: absolute;
+    font-weight: 700;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 1;
+    background: rgba(0, 255, 234, 0.57);
+    z-index: 2;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
+    padding: 1rem;
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.8rem;
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
+      margin-bottom: 0.5rem;
     }
 
     .subtitle {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      font-size: clamp(0.9rem, 3vw, 1rem);
+      margin-bottom: 0.8rem;
     }
   }
 }
@@ -47,32 +51,34 @@ $black: #0b0000;
 
   .button.primary.hero-button {
     background-color: $primary-color;
-    color: $white;
-    padding: 0.6rem 1.2rem;
+    color: white;
+    padding: 0.0rem 0.8rem;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 
     &:hover {
       background-color: darken($primary-color, 10%);
+      transform: scale(1.05);
     }
   }
 }
 
 .overview {
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 0.0rem 1rem;
+  max-width: 1000px;
   margin: 0 auto;
 
   .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: 0.8rem;
   }
 
   .about-text {
     p {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 3vw, 1rem);
       margin-bottom: 0.8rem;
     }
 
@@ -88,34 +94,38 @@ $black: #0b0000;
 }
 
 .collaboration-section {
-  padding: 2rem;
+  padding: 1.0rem 1rem;
   text-align: center;
 
   .section-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    margin-bottom: 0.8rem;
   }
 
   p {
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+  }
+
+  .contact-form-container {
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .contact-form {
-    display: grid;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 
     .form-group {
       input,
       textarea {
         width: 100%;
-        padding: 0.8rem;
+        padding: 0.6rem;
         border: 1px solid #ddd;
         border-radius: 5px;
-        font-size: 1rem;
+        font-size: clamp(0.9rem, 3vw, 1rem);
         transition: border-color 0.3s;
 
         &:focus {
@@ -125,56 +135,29 @@ $black: #0b0000;
       }
 
       textarea {
-        min-height: 100px;
+        min-height: 80px;
       }
     }
 
     .button.primary {
       background-color: $primary-color;
-      color: $white;
-      padding: 0.8rem 1.5rem;
+      color: blueviolet;
+      padding: 0.1rem 1.2rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 3px;
       cursor: pointer;
       font-weight: bold;
+      font-size: clamp(0.9rem, 3vw, 1rem);
       transition: background-color 0.3s;
 
       &:hover {
         background-color: darken($primary-color, 10%);
       }
-    }
-  }
-}
 
-.cta-buttons {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-
-  .button {
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-
-  .button.primary {
-    background-color: $primary-color;
-    color: $white;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
-  }
-
-  .button.cta-button {
-    background-color: #6c757d;
-    color: $white;
-
-    &:hover {
-      background-color: darken(#6c757d, 10%);
+      &:disabled {
+        background-color: darken($primary-color, 20%);
+        cursor: not-allowed;
+      }
     }
   }
 }
@@ -182,27 +165,28 @@ $black: #0b0000;
 .footer {
   padding: 1rem;
   background-color: $dark-bg;
-  color: $white;
-  font-size: 1.3rem;
+  color: white;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   text-align: center;
 
   p {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.25rem;
   }
 
   .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 0.8rem;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
 
     a {
       color: $white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      transition: transform 0.3s, color 0.3s;
 
       &:hover {
         color: $primary-color;
+        transform: scale(1.2);
       }
     }
   }
@@ -210,15 +194,15 @@ $black: #0b0000;
 
 @media (max-width: 768px) {
   .hero {
-    height: 20vh;
+    min-height: 25vh;
 
     .hero-content {
       h1 {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 4.5vw, 2rem);
       }
 
       .subtitle {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
       }
     }
   }
@@ -231,22 +215,23 @@ $black: #0b0000;
     }
   }
 
-  .section-title {
-    font-size: 1.8rem;
+  .overview,
+  .collaboration-section {
+    padding: 1rem 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 25vh;
+    min-height: 20vh;
 
     .hero-content {
       h1 {
-        font-size: 2.5rem;
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
       }
 
       .subtitle {
-        font-size: 0.8rem;
+        font-size: clamp(0.7rem, 2.5vw, 0.8rem);
       }
     }
   }
@@ -254,4 +239,59 @@ $black: #0b0000;
   .research-button-container {
     padding: 0.5rem 0;
   }
+
+  .overview,
+  .collaboration-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .contact-form-container {
+    max-width: 95%;
+  }
+}
+
+// Additional styles for interactivity
+.typing {
+  font-size: clamp(1.1rem, 3vw, 1rem);
+  font-weight: 600;
+  color: $white;
+  border-right: 2px solid $white;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: $white; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

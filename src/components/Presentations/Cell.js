@@ -35,7 +35,10 @@ const Cell = ({ data }) => {
       className="cell-container presentation-cell"
       role="region"
       aria-label={`Presentation: ${data.title}`}
-      style={{ marginBottom: '1.5rem' }}
+      style={{ 
+        marginBottom: '1.5rem',
+        padding: '0.5rem', // Added padding for mobile
+      }}
     >
       <article
         className={`mini-post ${open ? 'open' : ''}`}
@@ -54,25 +57,35 @@ const Cell = ({ data }) => {
         <header
           className="presentation-header"
           style={{
-            padding: '1.2rem',
+            padding: '0.5rem', // Reduced padding for mobile
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             backgroundColor: open ? '#eef2ff' : '#f9f9f9',
             transition: 'background-color 0.3s ease',
+            flexWrap: 'wrap', // Allow wrapping for mobile
           }}
         >
-          <div className="left-panel" style={{ flex: '1', minWidth: 0 }}>
+          <div 
+            className="left-panel" 
+            style={{ 
+              flex: '1', 
+              minWidth: 0, 
+              maxWidth: '90%', // Limit width to prevent overflow
+            }}
+          >
             <h3
               className="presentation-title"
               style={{
                 margin: 0,
-                fontSize: '1.3rem',
+                fontSize: '1.2rem', // Slightly smaller for mobile
                 color: '#333',
                 fontWeight: 600,
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'normal', // Allow wrapping
+                lineHeight: '1.4', // Improve readability
+                maxHeight: '3.6rem', // Limit to 2 lines
               }}
             >
               {data.link ? (
@@ -92,12 +105,12 @@ const Cell = ({ data }) => {
             </h3>
             <p
               style={{
-                margin: '0.6rem 0',
+                margin: '0.5rem 0',
                 color: '#666',
-                fontSize: '0.9rem',
+                fontSize: '0.85rem', // Adjusted for mobile
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                whiteSpace: 'normal', // Allow wrapping
               }}
             >
               {data.conference}
@@ -107,32 +120,43 @@ const Cell = ({ data }) => {
                 style={{
                   margin: '0.3rem 0',
                   color: '#555',
-                  fontSize: '0.85rem',
+                  fontSize: '0.8rem', // Adjusted for mobile
                   fontStyle: 'italic',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
+                  whiteSpace: 'normal', // Allow wrapping
                 }}
               >
                 {data.authors}
               </p>
             )}
           </div>
-          <div className="right-panel" style={{ textAlign: 'right', minWidth: 'fit-content' }}>
+          <div 
+            className="right-panel" 
+            style={{ 
+              textAlign: 'right', 
+              minWidth: 'fit-content',
+              marginTop: '0.15rem', // Space for wrapping on mobile
+            }}
+          >
             <time
-              style={{ display: 'block', color: '#999', fontSize: '0.8rem' }}
+              style={{ 
+                display: 'block', 
+                color: '#999', 
+                fontSize: '0.9rem', // Smaller for mobile
+              }}
               dateTime={data.date}
             >
               {dayjs(data.date).format('MMM D, YYYY')}
             </time>
             <span
               style={{
-                fontSize: '1.8rem',
+                fontSize: '1.5rem', // Smaller arrow for mobile
                 color: '#555',
                 transition: 'transform 0.3s ease',
                 display: 'inline-block',
+                transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
               }}
-              style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
             >
               {open ? '▲' : '▼'}
             </span>
@@ -143,7 +167,7 @@ const Cell = ({ data }) => {
           <div
             className="dropdown-content"
             style={{
-              padding: '1.5rem',
+              padding: '1rem', // Reduced padding
               backgroundColor: '#eef2ff',
               borderTop: '2px solid #5c6ac4',
               borderBottom: '2px solid #5c6ac4',
@@ -157,7 +181,7 @@ const Cell = ({ data }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '1.5rem',
+                gap: '1rem', // Reduced gap
               }}
             >
               <div
@@ -174,7 +198,7 @@ const Cell = ({ data }) => {
                     title={data.title}
                     style={{
                       width: '100%',
-                      height: '600px',
+                      height: '400px', // Reduced height for mobile
                       border: 'none',
                       borderRadius: '6px',
                     }}
@@ -188,8 +212,9 @@ const Cell = ({ data }) => {
                   lineHeight: '1.6',
                   marginTop: '0',
                   color: '#333',
-                  maxWidth: '800px',
+                  maxWidth: '100%', // Full width on mobile
                   textAlign: 'justify',
+                  fontSize: '0.9rem', // Smaller text
                 }}
               >
                 <p><strong>Type:</strong> {data.type}</p>
@@ -200,20 +225,22 @@ const Cell = ({ data }) => {
             <div
               className="share-links"
               style={{
-                marginTop: '1.5rem',
+                marginTop: '1rem',
                 textAlign: 'center',
                 display: 'flex',
                 justifyContent: 'center',
-                gap: '1.5rem',
-                minWidth: '300px',
+                gap: '1rem', // Reduced gap
+                minWidth: 'auto', // Adjusted for mobile
                 flexWrap: 'wrap',
                 visibility: 'visible',
                 opacity: 1,
-                padding: '10px',
+                padding: '8px',
                 backgroundColor: '#EEF1FC',
               }}
             >
-              <strong style={{ marginRight: '0.5em', color: '#555' }}>Share:</strong>
+              <strong style={{ marginRight: '0.5rem', color: '#555', fontSize: '0.9rem' }}>
+                Share:
+              </strong>
               <a
                 href={share.twitter}
                 target="_blank"
@@ -247,7 +274,11 @@ const Cell = ({ data }) => {
                   href={data.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#444', textDecoration: 'underline' }}
+                  style={{ 
+                    color: '#444', 
+                    textDecoration: 'underline', 
+                    fontSize: '0.9rem' // Smaller for mobile
+                  }}
                   aria-label={`${data.title} PDF (external link)`}
                 >
                   <FontAwesomeIcon icon={faExternalLinkAlt} /> View Original PDF
@@ -257,6 +288,52 @@ const Cell = ({ data }) => {
           </div>
         )}
       </article>
+
+      {/* Media Queries for Additional Responsiveness */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .presentation-cell {
+            padding: 0.5rem;
+          }
+          .presentation-header {
+            padding: 0.8rem;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .left-panel {
+            max-width: 100%;
+          }
+          .right-panel {
+            margin-top: 0.5rem;
+            align-self: flex-end;
+          }
+          .presentation-title {
+            font-size: 1.1rem;
+            max-height: none; /* Allow more lines on mobile if needed */
+          }
+          .dropdown-content {
+            padding: 0.8rem;
+          }
+          .presentation-content iframe {
+            height: 300px; /* Further reduced for smaller screens */
+          }
+          .share-links {
+            gap: 0.8rem;
+            padding: 0.5rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .presentation-title {
+            font-size: 1rem;
+          }
+          .presentation-content iframe {
+            height: 250px; /* Even smaller for very small screens */
+          }
+          .presentation-details {
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };
