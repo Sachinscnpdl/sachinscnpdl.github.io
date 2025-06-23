@@ -1,4 +1,4 @@
-# Personal Website of Sachin Poudel
+# Personal Website of Sachin Poudel https://sachinscnpdl.github.io/
 
 Welcome to my personal website! This is an MIT licensed React-based Jamstack application. It offers a simple interface, easy modifications, static export capabilities, and free automatic deployments via GitHub Pages.
 
