@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Main from '../layouts/Main';
 import Cell from '../components/Presentations/Cell';
 import data from '../data/Presentations';
