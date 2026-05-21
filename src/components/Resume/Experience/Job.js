@@ -12,7 +12,7 @@ const Job = ({
     <div className="job-card">
       <div className="job-header">
         <h3 className="job-title">
-          <a href={url} className="link">{name}</a> - {position}
+          {url ? <a href={url} className="link">{name}</a> : name} - {position}
         </h3>
         <span className="daterange">
           {dayjs(startDate).format('MMMM YYYY')} -{' '}

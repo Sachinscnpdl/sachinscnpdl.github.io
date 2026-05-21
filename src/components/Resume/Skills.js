@@ -69,35 +69,31 @@ const Skills = ({ skills, categories }) => {
   return (
     <div className="skills">
       <div className="link-to" id="skills" />
-      <div className="title" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 1s ease-in' }}>
-        <h3 style={{ color: '#007bff', textAlign: 'center', fontSize: '2.2rem', marginBottom: '0.5rem' }}>My Expertise Unleashed</h3>
-        <p style={{ color: '#666', fontStyle: 'italic', textAlign: 'center', fontSize: '1.1rem' }}>
-          *A playful take on my skills—real mastery happens in the lab and code! Explore my strengths below.
+      <div className={`title expertise-title ${isVisible ? 'is-visible' : ''}`}>
+        <p className="expertise-kicker">Research Expertise</p>
+        <h3>Research Methods</h3>
+        <p>
+          Core methods supporting my work in alloy design, functional symmetry,
+          electromechanical materials, and electrochemical interfaces.
         </p>
       </div>
-      <div className="skill-button-container" style={{ textAlign: 'center', margin: '1.5rem 0' }}>
+      <div className="skill-button-container">
         {getButtons()}
       </div>
-      <div className="skill-row-container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem' }}>
+      <div className="skill-row-container">
         <div>
           {getRows()[0].map((skill) => (
-            <div key={skill.title} className="skill-card">
-              <SkillBar categories={categories} data={skill} />
-            </div>
+            <SkillBar categories={categories} data={skill} key={skill.title} />
           ))}
         </div>
         <div>
           {getRows()[1].map((skill) => (
-            <div key={skill.title} className="skill-card">
-              <SkillBar categories={categories} data={skill} />
-            </div>
+            <SkillBar categories={categories} data={skill} key={skill.title} />
           ))}
         </div>
         <div>
           {getRows()[2].map((skill) => (
-            <div key={skill.title} className="skill-card">
-              <SkillBar categories={categories} data={skill} />
-            </div>
+            <SkillBar categories={categories} data={skill} key={skill.title} />
           ))}
         </div>
       </div>

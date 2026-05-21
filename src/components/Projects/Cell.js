@@ -80,9 +80,7 @@ const ProjectCell = ({ data }) => {
                 margin: 0,
                 fontSize: '1.3rem',
                 color: '#333',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                lineHeight: 1.35,
               }}
             >
               {data.link ? (
@@ -105,9 +103,7 @@ const ProjectCell = ({ data }) => {
                 margin: '0.6rem 0',
                 color: '#666',
                 fontSize: '0.9rem',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
+                lineHeight: 1.4,
               }}
             >
               {data.subtitle}
@@ -121,8 +117,8 @@ const ProjectCell = ({ data }) => {
                 color: '#555',
                 transition: 'transform 0.3s ease',
                 display: 'inline-block',
+                transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
               }}
-              style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
             >
               {open ? '▲' : '▼'}
             </span>
@@ -222,7 +218,41 @@ const ProjectCell = ({ data }) => {
                   <strong>Tools:</strong> {data.tools.join(', ')}
                 </p>
               )}
+              {data.highlights && data.highlights.length > 0 && (
+                <section className="project-highlights" aria-label={`${data.title} paper highlights`}>
+                  <h4>Paper Highlights</h4>
+                  <ul>
+                    {data.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </div>
+
+            {data.platforms && data.platforms.length > 0 && (
+              <section className="project-platforms" aria-label={`${data.title} live platforms`}>
+                <h4>Interactive Research Tools</h4>
+                <div className="project-platform-grid">
+                  {data.platforms.map((platform) => (
+                    <a
+                      className="project-platform-link"
+                      href={platform.link}
+                      key={platform.name}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <strong>
+                        {platform.name}
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                      </strong>
+                      <span>{platform.focus}</span>
+                      <em>Open platform</em>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {data.publications && data.publications.length > 0 && (
               <div style={{ marginTop: '1.5rem' }}>
@@ -316,6 +346,14 @@ ProjectCell.propTypes = {
     link: PropTypes.string,
     impact: PropTypes.string,
     tools: PropTypes.arrayOf(PropTypes.string),
+    highlights: PropTypes.arrayOf(PropTypes.string),
+    platforms: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        focus: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+      }),
+    ),
     publications: PropTypes.arrayOf(
       PropTypes.shape({ label: PropTypes.string, link: PropTypes.string })
     ),

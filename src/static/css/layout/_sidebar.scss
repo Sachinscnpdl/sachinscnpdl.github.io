@@ -31,3 +31,26 @@
     width: 100%;
   }
 }
+
+.sidebar-summary {
+  h2 {
+    margin-bottom: 0.85em;
+  }
+
+  p {
+    line-height: 1.65;
+    margin-bottom: 1em;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65em;
+    margin-top: 1.25em;
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

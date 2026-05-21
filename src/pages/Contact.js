@@ -44,8 +44,8 @@ const Contact = () => {
 
   return (
     <Main
-      title="Contact"
-      description="Contact Sachin Poudel via email @ sachinscnpdl@gmail.com"
+      title="Contact Sachin Poudel"
+      description="Contact Sachin Poudel for research collaboration in multiscale materials modeling, materials informatics, and functional materials."
     >
       <div className="bg-gradient-to-br from-teal-400 to-indigo-500 min-h-screen flex items-center justify-center py-12 px-4">
         <article className="max-w-xl w-full bg-white/70 backdrop-blur-md rounded-2xl shadow-xl p-6" id="contact">

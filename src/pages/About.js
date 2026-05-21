@@ -6,79 +6,100 @@ import '../static/css/pages/_home_page.scss';
 const About = () => (
   <Main
     title="About Sachin Poudel"
-    description="Learn about Sachin Poudel, a PhD candidate in Mechanical Engineering specializing in computational materials science."
+    description="About Sachin Poudel, a doctoral researcher in multiscale materials design, multicomponent alloys, piezoelectrics, and materials informatics."
   >
     <article className="post" id="about">
       <header>
         <div className="title">
           <h1 className="section-title">About Me</h1>
+          <p>Doctoral researcher in multiscale materials design and functional materials.</p>
         </div>
       </header>
-      <div className="about-wrapper">
-        <nav className="toc-sidebar">
-          <h3>Contents</h3>
-          <ul className="toc-list">
-            <li><a href="#biography">Biography</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#research">Research Interests</a></li>
-            <li><a href="#resume">Resume Overview</a></li>
+
+      <main className="about-page">
+        <section className="about-lead">
+          <div className="about-lead-copy">
+            <h2>From Material Descriptors to Functional Performance</h2>
+            <p>
+              I am <strong>Sachin Poudel</strong>, a doctoral researcher in Mechanical Engineering
+              at Silesian University of Technology, Poland. I study multicomponent alloys,
+              piezoelectric materials, and electrochemical interfaces using multiscale simulations,
+              machine learning, and materials informatics.
+            </p>
+            <p>
+              My research connects composition, processing, crystal symmetry, morphology,
+              phase evolution, and interfaces with measurable material and device performance.
+            </p>
+          </div>
+          <aside className="about-thesis">
+            <p className="about-label">Doctoral Dissertation</p>
+            <p>
+              <em>Scale-Bridging Computational and Data-Driven Design of Microstructures
+                in Multicomponent Alloys for Advanced Functional Materials</em>
+            </p>
+          </aside>
+        </section>
+
+        <section className="about-section">
+          <h2>Research Approach</h2>
+          <div className="about-path">
+            <div>
+              <h3>Describe</h3>
+              <p>Build meaningful descriptors from chemistry, structure, processing, and morphology.</p>
+            </div>
+            <div>
+              <h3>Model</h3>
+              <p>Use phase-field modeling, finite element analysis, and machine learning across scales.</p>
+            </div>
+            <div>
+              <h3>Evaluate</h3>
+              <p>Translate microstructure-sensitive properties into material, interface, or device performance.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="about-section">
+          <h2>Focus Areas</h2>
+          <div className="about-focus-grid">
+            <div>
+              <h3>Multicomponent Alloys</h3>
+              <p>Composition, processing, microstructure evolution, and mechanical response.</p>
+            </div>
+            <div>
+              <h3>Functional Symmetry</h3>
+              <p>Crystal-symmetry-guided screening for piezoelectric, polar, and related responses.</p>
+            </div>
+            <div>
+              <h3>Electromechanical Materials</h3>
+              <p>Tensor-aware piezoelectric prediction, nanofiber morphology, and device response.</p>
+            </div>
+            <div>
+              <h3>Electrochemical Interfaces</h3>
+              <p>Dendrite morphology, battery-interface stability, and corrosion response.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="about-section">
+          <h2>Methods</h2>
+          <ul className="about-methods">
+            <li>Density functional theory</li>
+            <li>Phase-field modeling</li>
+            <li>Finite element analysis</li>
+            <li>Finite-strain mechanics</li>
+            <li>Machine learning</li>
+            <li>Materials web tools</li>
           </ul>
-        </nav>
-        <main className="overview">
-          <section id="biography">
-            <h2>Biography</h2>
-            <p>
-              I’m a PhD candidate in Mechanical Engineering at Silesian University of Technology, Poland, passionate about computational materials science. My research, funded by the National Science Centre, Poland, uses phase-field modeling and machine learning to design advanced materials for energy and manufacturing. I’ve published in top journals, presented at international conferences, and taught engineering courses in Nepal.
-            </p>
-          </section>
-          <section id="expertise">
-            <h2>Expertise</h2>
-            <ul className="expertise-list">
-              <li>🔬 Microstructural Evolution</li>
-              <li>🌐 Phase-Field Modeling</li>
-              <li>🧪 Multi-Principal Element Alloys</li>
-              <li>🤖 Machine Learning</li>
-              <li>🌈 Functional Materials</li>
-              <li>⚛️ Density Functional Theory</li>
-            </ul>
-          </section>
-          <section id="research">
-            <h2>Research Interests</h2>
-            <p>
-              My work focuses on multi-scale material behavior, aiming to:
-            </p>
-            <ul>
-              <li>Predict microstructural evolution in alloys using phase-field models.</li>
-              <li>Accelerate materials discovery with machine learning.</li>
-              <li>Design materials for energy storage and piezoelectric applications.</li>
-              <li>Bridge atomistic and macroscopic simulations.</li>
-            </ul>
-            <p>
-              Explore my work in the <Link to="/research">Research</Link> tab.
-            </p>
-          </section>
-          <section id="resume">
-            <h2>Resume Overview</h2>
-            <p>
-              I hold a PhD candidacy from Silesian University of Technology, an M.Sc. and B.E. from Tribhuvan University, Nepal. My career includes research, teaching, and engineering roles. I’ve earned awards like the Rector’s Grant (2024) and contributed to workshops like the Swiss-Nepal Technology Transfer (2019). For details, visit my <Link to="/resume">Resume</Link>, <Link to="/publications">Publications</Link>, <Link to="/presentations">Presentations</Link>, or download my <a href="/SachinCV.pdf" download>CV</a>.
-            </p>
-          </section>
-        </main>
-        <aside className="profiles-sidebar">
-          <h3>Connect</h3>
-          <ul className="profiles-list">
-            <li>
-              <a href="https://scholar.google.com/citations?user=your-profile" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            </li>
-            <li>
-              <a href="https://github.com/sachinscnpdl" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/sachin-poudel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </li>
-          </ul>
-        </aside>
-      </div>
+        </section>
+
+        <section className="about-section about-links">
+          <h2>Explore</h2>
+          <Link to="/projects" className="button">Research</Link>
+          <Link to="/publications" className="button">Publications</Link>
+          <Link to="/resume" className="button">Resume</Link>
+          <a href="/SachinCV.pdf" className="button" download>Download CV</a>
+        </section>
+      </main>
     </article>
   </Main>
 );

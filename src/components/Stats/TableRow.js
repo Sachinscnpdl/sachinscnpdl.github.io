@@ -1,14 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const TableRow = ({
   label, link, value, format,
-}) => (
-  <tr>
-    <td width="70%">{label}</td>
-    <td>{link ? <a href={link}>{format(value)}</a> : format(value)}</td>
-  </tr>
-);
+}) => {
+  const display = format ? format(value) : value;
+
+  let valueCell = display;
+  if (link) {
+    const isInternal = link.startsWith('/');
+    valueCell = isInternal ? (
+      <Link to={link}>{display}</Link>
+    ) : (
+      <a href={link} target="_blank" rel="noopener noreferrer">{display}</a>
+    );
+  }
+
+  return (
+    <tr>
+      <td>{label}</td>
+      <td>{valueCell}</td>
+    </tr>
+  );
+};
 
 TableRow.propTypes = {
   format: PropTypes.func,

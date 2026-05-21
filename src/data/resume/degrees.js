@@ -5,11 +5,8 @@ const degrees = [
     link: 'https://www.polsl.pl/en/',
     year: 'Feb 2023 - Present',
     thesis: 'Thesis: Scale-Bridging Computational and Data-Driven Design of Microstructures in Multicomponent Alloys for Advanced Functional Materials',
-    highlights1: [
-      '  Degined computational framework for scale-bridging Multi-physics interactions of mutli-component alloys.',
-     
-    ],
-      highlights2: [ ' Received Rector’s Grant (2024) for high-impact publications, acquired projects, or scientific and research work.', ],
+    highlights1: 'Developing scale-bridging frameworks for multicomponent alloys and advanced functional materials.',
+    highlights2: 'Received the Rector\'s Grant (2024) for scientific and research achievements.',
   },
   {
     school: 'Tribhuvan University, IOE, Thapathali Campus, Nepal',
@@ -25,24 +22,8 @@ const degrees = [
     link: 'https://www.ioe.edu.np',
     year: '2014 - 2018',
     thesis: 'Final Year Project: Design, Fabrication, and Testing of Banana Fibre Extraction Machine',
-    highlights1: 'Abhiskar Fellowship (2018) awarded by Institute for Social and Environmental Transition -Nepal (ISET-N).'
+    highlights1: 'Received the Abhiskar Fellowship (2018) from the Institute for Social and Environmental Transition - Nepal (ISET-N).',
   },
-  {
-    school: 'Prasadi Academy',
-    degree: 'Higher Secondary Education, Science',
-    link: 'http://www.prasadiacademy.edu.np',
-    year: '2012 - 2014',
-    thesis: '',
-  },
-
-  {
-    school: 'Mahendra Adarsha Vidyashram, Lalitpur, Nepal',
-    degree: 'Secondary Education',
-    link: 'http://www.prasadiacademy.edu.np',
-    year: 'Graduated on 2012',
-
-  },
-
 ];
 
 export default degrees;

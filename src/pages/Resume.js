@@ -25,15 +25,19 @@ const sections = {
 
 const Resume = () => (
   <Main
-    title="Resume"
-    description="Sachin Poudel's Resume."
+    title="Materials Research Resume"
+    description="Resume of Sachin Poudel with research experience, education, publications, and technical expertise in multiscale materials design."
   >
     <article className="post" id="resume">
       <header>
         <div className="title">
           <h2>
-            <Link to="resume">Resume</Link>
+            <Link to="/resume">Resume</Link>
           </h2>
+          <p>
+            Research profile, education, and technical expertise in multiscale modeling,
+            materials informatics, and functional materials design.
+          </p>
           <div className="header-actions">
             <div className="link-container">
               {Object.keys(sections).map((sec) => (

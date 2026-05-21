@@ -1,20 +1,48 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const StatCard = ({ label, value, icon, link, format }) => {
   const displayValue = format ? format(value) : value;
-  const content = link ? (
-    <a href={link} className="value">{displayValue}</a>
-  ) : (
-    <p className="value">{displayValue}</p>
-  );
+
+  let valueNode = <p className="value">{displayValue}</p>;
+  if (link) {
+    const isInternal = link.startsWith('/');
+    valueNode = isInternal ? (
+      <Link to={link} className="value">{displayValue}</Link>
+    ) : (
+      <a
+        href={link}
+        className="value"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {displayValue}
+      </a>
+    );
+  }
 
   return (
     <div className="stat-card">
-      <i className={`fa fa-${icon}`}></i>
+      {icon && <i className={`fa fa-${icon}`} aria-hidden="true" />}
       <p className="label">{label}</p>
-      {content}
+      {valueNode}
     </div>
   );
+};
+
+StatCard.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  icon: PropTypes.string,
+  link: PropTypes.string,
+  format: PropTypes.func,
+};
+
+StatCard.defaultProps = {
+  icon: null,
+  link: null,
+  format: null,
 };
 
 export default StatCard;

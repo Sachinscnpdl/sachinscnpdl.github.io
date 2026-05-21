@@ -1,20 +1,17 @@
-// src/components/Publications/PublicationCell.js
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 
-// Helper function to generate social share links
 const getShareLinks = (title, url, researchGateLink) => {
   const encodedTitle = encodeURIComponent(title);
-  // No need for encodedQuery if only using title for Google Scholar search
   return {
     twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodeURIComponent(url)}`,
-    googleScholar: `https://scholar.google.com/scholar?q=${encodedTitle}`, // Using encodedTitle for search query
-    researchgate: researchGateLink, // Use direct link if provided
+    googleScholar: `https://scholar.google.com/scholar?q=${encodedTitle}`,
+    researchgate: researchGateLink,
   };
 };
 
-const PublicationCell = ({ data }) => {
+const PublicationCell = ({ data, number }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -24,24 +21,41 @@ const PublicationCell = ({ data }) => {
   const shareUrl = data.link || (data.doi ? `https://doi.org/${data.doi}` : window.location.href);
   const shareLinks = getShareLinks(data.title, shareUrl, data.researchGateLink);
 
-  // Function to highlight the author
   const highlightAuthor = (authorsString, authorToHighlight) => {
     const escapedAuthor = authorToHighlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${escapedAuthor})`, 'gi');
     return authorsString.replace(regex, '<span class="highlight-author">$1</span>');
   };
 
-  // Fallback image if data.image is not provided
-  const imageSrc = data.image ? `${process.env.PUBLIC_URL}${data.image}` : `${process.env.PUBLIC_URL}/placeholder.jpg`;
+  const imageSrc = data.image ? `${process.env.PUBLIC_URL}${data.image}` : null;
 
   return (
-    <div className="cell-container">
-      <article className="mini-post">
-        <header onClick={toggleOpen} style={{ cursor: 'pointer' }}>
+    <div className="cell-container publication-cell">
+      <article className={`mini-post ${isOpen ? 'is-open' : ''}`}>
+        <header
+          onClick={toggleOpen}
+          onKeyDown={(event) => {
+            if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) {
+              event.preventDefault();
+              toggleOpen();
+            }
+          }}
+          aria-expanded={isOpen}
+          role="button"
+          tabIndex={0}
+        >
           <div className="left-panel">
             <h3>
+              {number != null && (
+                <span className="publication-number">[{number}]</span>
+              )}
               {data.link ? (
-                <a href={data.link} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={data.link}
+                  onClick={(event) => event.stopPropagation()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {data.title}
                 </a>
               ) : (
@@ -59,7 +73,13 @@ const PublicationCell = ({ data }) => {
           <div className="right-panel">
             {(data.journal || data.conference) && (
               data.journalHomepage ? (
-                <a href={data.journalHomepage} target="_blank" rel="noopener noreferrer" className="journal-conf-link">
+                <a
+                  href={data.journalHomepage}
+                  onClick={(event) => event.stopPropagation()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="journal-conf-link"
+                >
                   <p className="journal-conf">
                     {data.journal || data.conference}
                   </p>
@@ -72,34 +92,37 @@ const PublicationCell = ({ data }) => {
             )}
             <div className="date-arrow-row">
               <time className="published">
-                {dayjs(data.date).format('MMMM, YYYY')} {/* Restored YYYY for clarity, adjust if 'MMMM' only is desired */}
+                {dayjs(data.date).format('MMMM YYYY')}
               </time>
-              <span className="dropdown-arrow">
-                {isOpen ? '▲' : '▼'}
-              </span>
+              <button
+                aria-label={`${isOpen ? 'Close' : 'Open'} details for ${data.title}`}
+                className="dropdown-arrow"
+                type="button"
+              >
+                {isOpen ? 'Close' : 'Details'}
+              </button>
             </div>
           </div>
         </header>
 
-        {/* Dropdown Content */}
         {isOpen && (
           <div className="dropdown-content">
-            {/* THIS CONTAINER HOLDS IMAGE (TOP) AND DESCRIPTION (BOTTOM) */}
-            {/* The CSS for this container should make its children stack vertically if not already */}
             <div className="image-description-container">
-              <div className="image">
-                <a href={data.link || shareUrl} target="_blank" rel="noopener noreferrer">
-                  <img src={imageSrc} alt={data.title} />
-                </a>
-              </div>
-              <div className="description">
+              {imageSrc && (
+                <figure className="publication-figure">
+                  <a href={data.link || shareUrl} target="_blank" rel="noopener noreferrer">
+                    <img src={imageSrc} alt={data.title} />
+                  </a>
+                </figure>
+              )}
+              <div className="publication-summary">
                 <p>{data.desc}</p>
+                {data.doi && <p className="doi">DOI: {data.doi}</p>}
               </div>
-            </div> {/* END .image-description-container */}
+            </div>
 
-            {/* Social Media Share Links - These will now appear consistently BELOW the image and description */}
             <div className="social-share-links">
-              <span>News and Social Media: </span>
+              <span>Explore</span>
               {shareLinks.researchgate && (
                 <a href={shareLinks.researchgate} target="_blank" rel="noopener noreferrer" className="social-icon researchgate">
                   ResearchGate
@@ -110,10 +133,9 @@ const PublicationCell = ({ data }) => {
                   Google Scholar
                 </a>
               )}
-              {/* Removed LinkedIn and Facebook share links as they were not in your provided code */}
               {shareLinks.twitter && (
                 <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="social-icon twitter">
-                  Twitter
+                  Share
                 </a>
               )}
               {data.link && (
@@ -130,6 +152,7 @@ const PublicationCell = ({ data }) => {
 };
 
 PublicationCell.propTypes = {
+  number: PropTypes.number,
   data: PropTypes.shape({
     title: PropTypes.string.isRequired,
     authors: PropTypes.string,
@@ -137,13 +160,16 @@ PublicationCell.propTypes = {
     conference: PropTypes.string,
     journalHomepage: PropTypes.string,
     link: PropTypes.string,
-    image: PropTypes.string, // image is now optional due to fallback
+    image: PropTypes.string,
     date: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     doi: PropTypes.string,
     researchGateLink: PropTypes.string,
-    // Removed specific array propTypes for facebookShareLinks and linkedinShareLinks
   }).isRequired,
+};
+
+PublicationCell.defaultProps = {
+  number: null,
 };
 
 export default PublicationCell;

@@ -5,14 +5,21 @@ import Cell from '../components/Projects/Cell';
 import data from '../data/projects';
 
 const Projects = () => (
-  <Main title="Research Highlights" description="Learn about Sachin Poudel's projects.">
+  <Main
+    title="Materials Research Projects"
+    description="Research projects by Sachin Poudel on multicomponent alloys, crystal-symmetry-guided materials, piezoelectrics, battery interfaces, and materials web tools."
+  >
     <article className="post" id="projects">
       <header>
         <div className="title">
           <h2>
             <Link to="/projects">Projects</Link>
           </h2>
-          <p>Research area and key findings from my interdisciplinary research projects. For full details, follow the links to the corresponding publications.</p>
+          <p>
+            I combine materials informatics, physics-based modeling, and crystallographic
+            insight to study microstructure-sensitive multicomponent and functional
+            materials, from composition and morphology to material and device response.
+          </p>
         </div>
       </header>
       {data.map((project) => (

@@ -12,8 +12,8 @@ const SideBar = () => (
         <img src={`${PUBLIC_URL}/images/me.jpg`} alt="Sachin Poudel" />
       </Link>
       <header>
-        <h2>Hi, I’m Sachin Poudel</h2>
-        <p>PhD Candidate in Mechanical Engineering</p>
+        <h2>Sachin Poudel</h2>
+        <p>Doctoral Researcher</p>
         <p>Silesian University of Technology</p>
         <p>
           <a href="mailto:sachinscnpdl@gmail.com">sachinscnpdl@gmail.com</a>
@@ -21,21 +21,18 @@ const SideBar = () => (
       </header>
     </section>
 
-    <section className="blurb">
-      <h2>About Me</h2>
+    <section className="blurb sidebar-summary">
+      <h2>Research Focus</h2>
       <p>
-        I specialize in <strong>Material Informatics</strong>, <strong>Phase-field Modeling</strong>,
-        and <strong>Multi-physics, Multi-scale Functional Materials</strong>.
+        Scale-bridging simulations and data-driven materials design.
       </p>
       <p>
-        As a computational research engineer, I focus on understanding, modeling,
-        and optimizing the mechanical response of materials through advanced simulations
-        and data-driven methods.
+        Read more about my background, research direction, and academic work.
       </p>
       <ul className="actions">
         <li>
           <Link to="/about" className="button">
-            Learn More
+            About Me
           </Link>
         </li>
       </ul>

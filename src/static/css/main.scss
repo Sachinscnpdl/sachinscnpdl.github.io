@@ -66,234 +66,436 @@
 @import "layout/footer";
 @import "layout/menu";
 
+@import "pages/home_page";
 @import "pages/contact";
 @import "pages/notFound";
 @import "pages/resume";
 @import "pages/skills";
 @import "pages/stats";
 
+#projects {
+  .project-description a {
+    color: #2f7d68;
+    font-weight: 600;
+  }
+
+  .project-highlights {
+    background: #fff;
+    border: 1px solid #d7e2de;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 100%;
+
+    h4 {
+      color: #173042;
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      margin: 0 0 0.65rem;
+      text-transform: none;
+    }
+
+    ul {
+      color: #53636c;
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    li {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 0.45rem;
+      text-transform: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .project-platforms {
+    border-top: 1px solid #d7e2de;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    width: 100%;
+
+    h4 {
+      color: #173042;
+      font-size: 0.92rem;
+      letter-spacing: 0;
+      margin: 0 0 0.8rem;
+      text-transform: none;
+    }
+  }
+
+  .project-platform-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .project-platform-link {
+    background: #fff;
+    border: 1px solid #d7e2de;
+    border-radius: 6px;
+    color: #53636c;
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.9rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+    strong {
+      align-items: center;
+      color: #173042;
+      display: flex;
+      font-size: 0.88rem;
+      gap: 0.38rem;
+      letter-spacing: 0;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+      text-transform: none;
+    }
+
+    span {
+      color: inherit;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      overflow-wrap: break-word;
+      text-transform: none;
+    }
+
+    em {
+      color: #2f7d68;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      border-color: #2f7d68;
+      box-shadow: 0 8px 20px rgba(23, 48, 66, 0.1);
+      color: #2f7d68;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  #projects .project-platform-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- Publications Section Specific Styling --- */
-#publications .cell-container {
-  margin-bottom: -0.50em;
-  border-bottom: none;
-  padding-bottom: 0.0em;
+#publications {
+  --pub-ink: #173042;
+  --pub-muted: #53636c;
+  --pub-accent: #2f7d68;
+  --pub-surface: #f6f9f8;
+  --pub-border: #d7e2de;
+
+  .publication-year {
+    margin-bottom: 2.25rem;
+
+    > h3 {
+      border-bottom: 2px solid var(--pub-accent);
+      color: var(--pub-ink);
+      font-size: 1.45rem;
+      letter-spacing: 0;
+      margin: 0 0 1rem;
+      padding-bottom: 0.45rem;
+      text-transform: none;
+    }
+  }
+
+  .cell-container {
+    border-bottom: 0;
+    margin: 0 0 0.85rem;
+    padding: 0;
+  }
+
+  .mini-post {
+    border: 1px solid var(--pub-border);
+    border-radius: 6px;
+    margin: 0;
+    overflow: hidden;
+
+    > header {
+      align-items: flex-start;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      gap: 1.25rem;
+      justify-content: space-between;
+      padding: 1rem 1.1rem;
+    }
+
+    &.is-open > header {
+      background: var(--pub-surface);
+    }
+  }
+
+  .left-panel {
+    flex: 1;
+    min-width: 0;
+
+    h3 {
+      color: var(--pub-ink);
+      font-size: 1.02rem;
+      letter-spacing: 0;
+      line-height: 1.45;
+      margin: 0 0 0.45rem;
+      overflow-wrap: anywhere;
+      text-transform: none;
+      word-break: normal;
+
+      .publication-number {
+        color: var(--pub-accent);
+        font-weight: 700;
+        margin-right: 0.35em;
+      }
+
+      a {
+        border-bottom: 0;
+        color: inherit;
+        letter-spacing: inherit;
+        text-decoration: none;
+        text-transform: none;
+
+        &:hover {
+          color: var(--pub-accent);
+        }
+      }
+    }
+
+    .authors {
+      color: var(--pub-muted);
+      font-size: 0.88rem;
+      letter-spacing: 0;
+      line-height: 1.55;
+      margin: 0;
+      overflow-wrap: break-word;
+      text-transform: none;
+    }
+
+    .highlight-author {
+      color: var(--pub-accent);
+      font-weight: 700;
+    }
+  }
+
+  .right-panel {
+    align-items: flex-end;
+    display: flex;
+    flex: 0 0 14rem;
+    flex-direction: column;
+    gap: 0.55rem;
+    text-align: right;
+
+    .journal-conf-link {
+      border-bottom: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .journal-conf {
+      color: #8a4b35;
+      font-size: 0.82rem;
+      font-style: italic;
+      letter-spacing: 0;
+      line-height: 1.45;
+      margin: 0;
+      overflow-wrap: break-word;
+      text-transform: none;
+    }
+
+    .date-arrow-row {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: flex-end;
+      margin: 0;
+    }
+
+    .published {
+      color: var(--pub-muted);
+      font-size: 0.82rem;
+      letter-spacing: 0;
+      margin: 0;
+      text-transform: none;
+    }
+
+    .dropdown-arrow {
+      border-radius: 4px;
+      box-shadow: inset 0 0 0 1px var(--pub-border);
+      color: var(--pub-ink) !important;
+      font-size: 0.58rem;
+      height: auto;
+      letter-spacing: 0;
+      line-height: 1;
+      margin: 0;
+      padding: 0.55rem 0.65rem;
+
+      &:hover {
+        background: var(--pub-accent);
+        box-shadow: none;
+        color: #fff !important;
+      }
+    }
+  }
+
+  .dropdown-content {
+    background: var(--pub-surface);
+    border-top: 1px solid var(--pub-border);
+    display: grid;
+    gap: 1.15rem;
+    padding: 1.25rem;
+  }
+
+  .image-description-container {
+    align-items: start;
+    display: grid;
+    gap: 1.35rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    width: 100%;
+  }
+
+  .publication-figure {
+    background: #fff;
+    border: 1px solid var(--pub-border);
+    border-radius: 6px;
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0.8rem;
+    width: 100%;
+
+    a {
+      border-bottom: 0;
+      display: block;
+    }
+
+    img {
+      display: block;
+      height: auto;
+      max-height: 30rem;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: top center;
+      width: 100%;
+    }
+  }
+
+  .publication-summary {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    justify-self: stretch;
+    max-width: 100%;
+    min-width: 0;
+    padding-top: 0;
+
+    p {
+      color: var(--pub-muted);
+      font-size: 1rem;
+      hyphens: auto;
+      line-height: 1.78;
+      margin: 0 0 0.85rem;
+      max-width: 58ch;
+      overflow-wrap: anywhere;
+      text-transform: none;
+      text-wrap: pretty;
+      word-break: normal;
+    }
+
+    .doi {
+      color: var(--pub-ink);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+  }
+
+  .social-share-links {
+    align-items: center;
+    border-top: 1px solid var(--pub-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    justify-content: flex-end;
+    padding-top: 0.9rem;
+
+    span {
+      color: var(--pub-muted);
+      font-family: _font(family-heading);
+      font-size: 0.64rem;
+      font-weight: _font(weight-heading-bold);
+      text-transform: uppercase;
+    }
+
+    .social-icon {
+      border: 1px solid var(--pub-border);
+      border-radius: 4px;
+      color: var(--pub-ink);
+      font-size: 0.76rem;
+      padding: 0.45rem 0.65rem;
+      text-decoration: none;
+      text-transform: none;
+
+      &:hover {
+        border-color: var(--pub-accent);
+        color: var(--pub-accent);
+      }
+    }
+  }
 }
 
-#publications .mini-post header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  cursor: pointer;
-  padding-bottom: 0.0em;
-  gap: 20px;
-}
+@media (max-width: 736px) {
+  #publications {
+    .left-panel h3,
+    .right-panel .journal-conf {
+      max-width: 100%;
+    }
 
-#publications .left-panel {
-  flex-basis: 80%;
-  flex-grow: 1;
-}
+    .mini-post > header,
+    .image-description-container {
+      grid-template-columns: 1fr;
+    }
 
-#publications .left-panel h3 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  line-height: 1.5;
-  text-transform: none;
-  letter-spacing: 0.08em; //normal;
-  font-size: 0.80em;
-}
+    .mini-post > header {
+      flex-direction: column;
+    }
 
-#publications .left-panel h3 a {
-  text-decoration: none;
-  color: inherit;
-  text-transform: none;
-  letter-spacing: inherit;
-}
+    .right-panel {
+      align-items: flex-start;
+      flex-basis: auto;
+      text-align: left;
 
-#publications .left-panel .authors {
-  font-size: 0.75em;
-  color: #555;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1.4;
-  letter-spacing: 0.0em;
-  text-transform: none;
-}
+      .date-arrow-row {
+        justify-content: flex-start;
+      }
+    }
 
-#publications .left-panel .authors .highlight-author {
-  font-weight: bold;
-  color: #007bff;
-}
+    .publication-figure img {
+      height: auto;
+      max-height: 28rem;
+    }
 
-#publications .right-panel {
-  flex-basis: 20%;
-  flex-shrink: 0;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
+    .publication-summary {
+      align-self: start;
+      grid-column: auto;
+    }
 
-#publications .right-panel .journal-conf-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-#publications .right-panel .journal-conf {
-  font-style: italic;
-  font-size: 0.8em;
-  color: #ee0b1e;
-  margin-top: 0;
-  margin-bottom: 0.2em;
-  margin-right: -4.2em;
-  line-height: 1.3;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-#publications .right-panel .date-arrow-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
-
-#publications .right-panel .published {
-  font-size: 0.85em;
-  color: #777;
-  margin: 0;
-  // margin-right: -1.2em;
-  text-transform: none;
-  letter-spacing: normal;
-}
-
-#publications .right-panel .dropdown-arrow {
-  font-size: 1.2em;
-  color: #333;
-  margin: 0;
-  margin-right: -2.2em;
-}
-
-/* --- Dropdown Content (Contains image-description-container and social share links) --- */
-#publications .dropdown-content {
-  margin-top: 0em;
-  padding: 1em;
-  border: 3px solid #eb5050;
-  background-color: #d9d8e5;
-  display: flex;
-  flex-direction: column; /* This ensures .image-description-container and .social-share-links stack vertically */
-  gap: 1.5em; /* Space between the main content block and social links */
-  overflow: hidden;
-}
-
-/* Styles for the wrapper holding image (top) and description (bottom) */
-#publications .dropdown-content .image-description-container {
-  display: block; /* Ensure this container behaves as a block-level element, making its children stack */
-  /* Any margins here would add space around the entire image+description block */
-}
-
-#publications .dropdown-content .image-description-container .image {
-  display: block; /* Ensure image link behaves as a block element */
-  margin-bottom: 4em; /* Add space below the image before the description */
-  width: 80%; /* Image container takes full width of its parent */
-  max-width: 700px; /* Optional: Limit image container max width */
-  margin-left: 4em; /* Keep your specific margin-left */
-}
-
-
-#publications .dropdown-content .description p {
-  line-height: 1.6;
-  margin-bottom: 5em; /* Remove default paragraph margin */
-  margin-right: 1em; /* Keep your specific margin-right */
-
-}
-
-/* --- Social Share Links --- */
-#publications .social-share-links {
-  margin-top: 0; /* Ensures consistency, parent's gap handles main spacing */
-  border-top: 2px dashed #eee; /* Separator line above share links */
-  padding-top: 1em; /* Space after the border line */
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px; /* Space between individual social icons */
-}
-
-#publications .social-share-links span {
-  font-weight: bold;
-  margin-right: 1px;
-  color: #555;
-}
-
-#publications .social-share-links .social-icon {
-  display: inline-flex;
-  padding: 8px 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.75em;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  text-transform: none;
-}
-
-#publications .social-share-links .social-icon:hover {
-  background-color: #f0f0f0;
-  border-color: #999;
-}
-
-/* Specific colors for branding */
-#publications .social-share-links .social-icon.twitter {
-  border-color: #1DA1F2;
-  color: #1DA1F2;
-}
-#publications .social-share-links .social-icon.twitter:hover {
-  background-color: #1DA1F2;
-  color: white;
-}
-
-#publications .social-share-links .social-icon.linkedin {
-  border-color: #0077B5;
-  color: #0077B5;
-}
-#publications .social-share-links .social-icon.linkedin:hover {
-  background-color: #0077B5;
-  color: white;
-}
-
-#publications .social-share-links .social-icon.facebook {
-  border-color: #3B5998;
-  color: #3B5998;
-}
-#publications .social-share-links .social-icon.facebook:hover {
-  background-color: #3B5998;
-  color: white;
-}
-
-#publications .social-share-links .social-icon.researchgate {
-  border-color: #00CC66;
-  color: #00CC66;
-}
-#publications .social-share-links .social-icon.researchgate:hover {
-  background-color: #00CC66;
-  color: white;
-}
-
-#publications .social-share-links .social-icon.google-scholar {
-  border-color: #4285F4;
-  color: #4285F4;
-}
-#publications .social-share-links .social-icon.google-scholar:hover {
-  background-color: #4285F4;
-  color: white;
-}
-
-#publications .social-share-links .social-icon.paper-link {
-  border-color: #6c757d;
-  color: #6c757d;
-}
-#publications .social-share-links .social-icon.paper-link:hover {
-  background-color: #6c757d;
-  color: white;
+    .social-share-links {
+      justify-content: flex-start;
+    }
+  }
 }
